@@ -12,7 +12,7 @@ describe('Statement', function() {
     expect(statement.getBalance()).toEqual(0)
   });
 
-  it('increases balance whit deposit()', function(){
+  it('increases balance with deposit()', function(){
     statement.deposit(1000);
     expect(statement.getBalance()).toEqual(1000)
   });
