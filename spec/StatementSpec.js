@@ -9,6 +9,6 @@ describe('Statement', function() {
   });
 
   it('startes with a balance of 0', function() {
-    expect(statement.balance).toEqual(0)
+    expect(statement.getBalance()).toEqual(0)
   });
 });
