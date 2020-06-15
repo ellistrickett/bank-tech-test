@@ -38,4 +38,11 @@ describe('Statement', function() {
     statement.withdrawal(500);
     expect(statement.getHistory()).toContain(["15/6/2020", null, 500, 500])
   });
+
+  it('prints statement', function(){
+    statement.deposit(1000);
+    statement.deposit(2000);
+    statement.withdrawal(500);
+    expect(statement.print()).toMatch("\nDate || Credit || Debit || Balance\n15/06/2020 ||  || 500 || 2500\n15/06/2020 || 2000 ||  || 3000\n15/06/2020 || 1000 ||  || 1000")
+  });
 });

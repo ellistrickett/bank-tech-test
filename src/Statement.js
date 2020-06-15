@@ -24,12 +24,12 @@ class Statement{
 
   deposit(amount) {
     this.balance += amount
-    this.history.push([this.getDate(), amount, null, this.balance])
+    this.history.unshift([this.getDate(), amount, null, this.balance])
   }
 
   withdrawal(amount) {
     this.balance -= amount
-    this.history.push([this.getDate(), null, amount, this.balance])
+    this.history.unshift([this.getDate(), null, amount, this.balance])
   }
-
+  
 };
