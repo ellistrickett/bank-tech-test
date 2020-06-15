@@ -17,4 +17,12 @@ class Statement{
     this.balance -= amount
   }
 
+  getDate() {
+    var d = new Date();
+    var date = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    return (date + "/" + month + "/" + year);
+  }
+
 };
