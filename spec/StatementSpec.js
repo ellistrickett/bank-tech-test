@@ -8,7 +8,7 @@ describe('Statement', function() {
     statement = new Statement();
   });
 
-  it('startes with a balance of 0', function() {
+  it('starts with a balance of 0', function() {
     expect(statement.getBalance()).toEqual(0)
   });
 
@@ -23,4 +23,8 @@ describe('Statement', function() {
     statement.withdrawal(500);
     expect(statement.getBalance()).toEqual(2500)
   });
+
+  it('knows what date it is', function(){
+    expect(statement.getDate()).toEqual("15/6/2020")
+  })
 });

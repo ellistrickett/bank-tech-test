@@ -16,4 +16,5 @@ class Statement{
   withdrawal(amount) {
     this.balance -= amount
   }
+
 };
