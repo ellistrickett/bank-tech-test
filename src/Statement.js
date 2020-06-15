@@ -2,19 +2,12 @@
 
 class Statement{
   constructor() {
-    this.balance = 0
+    this.balance = 0;
+    this.history = [];
   }
 
   getBalance() {
     return this.balance;
-  }
-
-  deposit(amount) {
-    this.balance += amount
-  }
-
-  withdrawal(amount) {
-    this.balance -= amount
   }
 
   getDate() {
@@ -23,6 +16,19 @@ class Statement{
     var month = d.getMonth() + 1;
     var year = d.getFullYear();
     return (date + "/" + month + "/" + year);
+  }
+
+  getHistory() {
+    return this.history
+  }
+
+  deposit(amount) {
+    this.balance += amount
+    this.history.push([this.getDate(), amount, null, this.balance])
+  }
+
+  withdrawal(amount) {
+    this.balance -= amount
   }
 
 };

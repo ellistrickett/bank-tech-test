@@ -26,5 +26,10 @@ describe('Statement', function() {
 
   it('knows what date it is', function(){
     expect(statement.getDate()).toEqual("15/6/2020")
-  })
+  });
+
+  it('saves each deposit as an array', function() {
+    statement.deposit(1000);
+    expect(statement.getHistory()).toContain(["15/6/2020", 1000, null, 1000])
+  });
 });
