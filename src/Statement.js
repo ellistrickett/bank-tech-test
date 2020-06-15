@@ -29,6 +29,7 @@ class Statement{
 
   withdrawal(amount) {
     this.balance -= amount
+    this.history.push([this.getDate(), null, amount, this.balance])
   }
 
 };
