@@ -31,5 +31,10 @@ class Statement{
     this.balance -= amount
     this.history.unshift([this.getDate(), null, amount, this.balance])
   }
-  
+
+  print() {
+    var str = this.history.join('\n');
+    return '\nDate || Credit || Debit || Balance\n' + str.replace(/,/g, " || ")
+  }
+
 };
