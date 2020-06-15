@@ -12,5 +12,5 @@ class Statement{
   deposit(amount) {
     this.balance += amount
   }
-  
+
 };

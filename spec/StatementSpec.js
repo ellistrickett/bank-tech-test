@@ -16,4 +16,11 @@ describe('Statement', function() {
     statement.deposit(1000);
     expect(statement.getBalance()).toEqual(1000)
   });
+
+  it('decreases balance with withdrawal()', function(){
+    statement.deposit(1000);
+    statement.deposit(2000);
+    statement.withdrawal(500);
+    expect(statement.getBalance()).toEqual(2500)
+  });
 });
