@@ -32,4 +32,10 @@ describe('Statement', function() {
     statement.deposit(1000);
     expect(statement.getHistory()).toContain(["15/6/2020", 1000, null, 1000])
   });
+
+  it('saves each withdrawal as an array', function(){
+    statement.deposit(1000);
+    statement.withdrawal(500);
+    expect(statement.getHistory()).toContain(["15/6/2020", null, 500, 500])
+  });
 });
