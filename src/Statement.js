@@ -1,7 +1,9 @@
 'use strict';
 
 class Statement{
-  constructor() {
+  
+  constructor(dateToday = new DateToday()) {
+    this.date = dateToday;
     this.balance = 0;
     this.history = [];
   }
@@ -10,26 +12,18 @@ class Statement{
     return this.balance;
   }
 
-  getDate() {
-    var d = new Date();
-    var date = d.getDate();
-    var month = d.getMonth() + 1;
-    var year = d.getFullYear();
-    return (date + "/" + month + "/" + year);
-  }
-
   getHistory() {
     return this.history
   }
 
   deposit(amount) {
     this.balance += amount
-    this.history.unshift([this.getDate(), amount, null, this.balance])
+    this.history.unshift([this.date.dateFormatter(), amount, null, this.balance])
   }
 
   withdrawal(amount) {
     this.balance -= amount
-    this.history.unshift([this.getDate(), null, amount, this.balance])
+    this.history.unshift([this.date.dateFormatter(), null, amount, this.balance])
   }
 
   print() {

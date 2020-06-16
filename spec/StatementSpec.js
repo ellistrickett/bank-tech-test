@@ -5,7 +5,15 @@ describe('Statement', function() {
   var statement;
 
   beforeEach(function() {
-    statement = new Statement();
+
+    var dateToday = {
+      dateFormatter: function() {
+        return "15/6/2020"
+      }
+    }
+
+    statement = new Statement(dateToday);
+
   });
 
   it('starts with a balance of 0', function() {
@@ -25,7 +33,7 @@ describe('Statement', function() {
   });
 
   it('knows what date it is', function(){
-    expect(statement.getDate()).toEqual("15/6/2020")
+    expect(statement.date.dateFormatter()).toEqual("15/6/2020")
   });
 
   it('saves each deposit as an array', function() {
